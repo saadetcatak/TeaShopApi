@@ -7,7 +7,7 @@ using TeaShopApi.EntityLayer.Concrete;
 
 namespace TeaShopApi.BusinessLayer.Abstract
 {
-    public interface ITestimonialDal:IGenericService<Testimonial>
+    public interface ITestimonialService:IGenericService<Testimonial>
     {
     }
 }

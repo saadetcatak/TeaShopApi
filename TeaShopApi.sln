@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeaShopApi.BusinessLayer", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeaShopApi.DataAccessLayer", "TeaShopApi.DataAccessLayer\TeaShopApi.DataAccessLayer.csproj", "{95877A88-342B-4A9E-AED6-9D1F6758806A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaShopApi.DtoLayer", "TeaShopApi.DtoLayer\TeaShopApi.DtoLayer.csproj", "{7B7F7AEB-B30F-4B4C-BD6E-361B634FF176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeaShopApi.DtoLayer", "TeaShopApi.DtoLayer\TeaShopApi.DtoLayer.csproj", "{7B7F7AEB-B30F-4B4C-BD6E-361B634FF176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeaShopApi.WebUI", "TeaShopApi.WebUI\TeaShopApi.WebUI.csproj", "{DD6C1CC0-C048-4AE1-ACFB-505445C7BD92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7B7F7AEB-B30F-4B4C-BD6E-361B634FF176}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B7F7AEB-B30F-4B4C-BD6E-361B634FF176}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B7F7AEB-B30F-4B4C-BD6E-361B634FF176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6C1CC0-C048-4AE1-ACFB-505445C7BD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6C1CC0-C048-4AE1-ACFB-505445C7BD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6C1CC0-C048-4AE1-ACFB-505445C7BD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6C1CC0-C048-4AE1-ACFB-505445C7BD92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
