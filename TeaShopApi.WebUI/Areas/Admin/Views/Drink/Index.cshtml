@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<TeaShopApi.WebUI.Dtos.DrinkDtos.ResultDrinkDto>
+
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
@@ -9,7 +11,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5>Hello card</h5>
+                <h5>İçecek İşlemleri</h5>
                 <div class="card-header-right">
                     <div class="btn-group card-option">
                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,12 +27,27 @@
                 </div>
             </div>
             <div class="card-body">
-                <p>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>İçecek Adı</th>
+                        <th>İçecek Fiyatı</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.drinkID</td>
+                            <td>@item.drinkName</td>
+                            <td>@item.drinkPrice</td>
+                            <td><a href="#" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="#" class="btn btn-outline-success">Güncelle</a></td>
 
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                    officia deserunt mollit anim id est laborum."
-                </p>
+                        </tr>
+                    }
+                </table>
+                <a href="#" class="btn btn-outline-primary">Yeni İçecek Girişi</a>
             </div>
         </div>
     </div>

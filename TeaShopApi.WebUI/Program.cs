@@ -3,7 +3,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
+builder.Services.AddHttpClient();
+//client iþlemi için yazýyoruz.
+
+
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -24,6 +33,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
@@ -31,5 +41,6 @@ app.UseEndpoints(endpoints =>
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
 });
+//area iþlemi için ScaffoldingReadMeden yazýyoruz.
 
 app.Run();
