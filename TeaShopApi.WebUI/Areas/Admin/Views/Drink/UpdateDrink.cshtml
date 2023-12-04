@@ -1,12 +1,14 @@
-﻿@model CreateDrinkDto
+﻿@model UpdateDrinkDto
 @{
-    ViewData["Title"] = "CreateDrink";
+    ViewData["Title"] = "UpdateDrink";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<h1>Yeni İçecek Girişi</h1>
+<h1>İçecek Güncelleme Sayfası</h1>
 
 <form method="post">
+    <input type="hidden" asp-for="drinkID" />
+    <br />
     <label>İçecek Adı</label>
     <input type="text" class="form-control" asp-for="drinkName" />
     <br />
@@ -16,5 +18,5 @@
     <label>İçecek Resmi</label>
     <input type="text" class="form-control" asp-for="drinkImageUrl" />
     <br />
-    <button class="btn btn-primary">İçecek Ekle</button>
+    <button class="btn btn-success">İçeceği Güncelle</button>
 </form>
