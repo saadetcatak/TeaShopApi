@@ -20,6 +20,13 @@ builder.Services.AddScoped<IMessageService, MessageManager>();
 builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
+builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
+
+builder.Services.AddScoped<IStatisticsDal, EfStatisticsDal>();
+builder.Services.AddScoped<IStatisticsService, StatisticsManager>();
+
+
 builder.Services.AddDbContext<TeaContext>();
 
 

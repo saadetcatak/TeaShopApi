@@ -1,0 +1,17 @@
+﻿@model CreateAboutDto
+@{
+    ViewData["Title"] = "CreateAbout";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Yeni Hakkımızda Bilgisi Girişi</h1>
+
+<form method="post">
+    <label>Açıklama</label>
+    <input type="text" class="form-control" asp-for="Description" />
+    <br />
+    <label>Resim</label>
+    <input type="text" class="form-control" asp-for="ImageUrl" />
+    <br />
+    <button class="btn btn-primary">Hakkımızda Bilgisi Ekle</button>
+</form>

@@ -1,8 +1,8 @@
-﻿@model List<TeaShopApi.WebUI.Dtos.DrinkDtos.ResultDrinkDto>
-
+﻿@model List<ResultAboutDto>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <div class="row">
@@ -11,7 +11,7 @@
         <div class="card">
 
             <div class="card-header">
-                <h5>İçecek İşlemleri</h5>
+                <h5>Hakkımızda İşlemleri</h5>
                 <div class="card-header-right">
                     <div class="btn-group card-option">
                         <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,27 +30,27 @@
                 <table class="table table-bordered">
                     <tr>
                         <th>#</th>
-                        <th>İçecek Adı</th>
-                        <th>İçecek Fiyatı</th>
+                        <th>Açıklama</th>
+                        <th>Resim</th>
                         <th>Sil</th>
                         <th>Güncelle</th>
                     </tr>
                     @foreach (var item in Model)
                     {
+                        count++;
                         <tr>
-                            <td>@item.drinkID</td>
-                            <td>@item.drinkName</td>
-                            <td>@item.drinkPrice</td>
-                            <td><a href="/Admin/Drink/DeleteDrink/@item.drinkID" class="btn btn-outline-danger">Sil</a></td>
-                            <td><a href="/Admin/Drink/UpdateDrink/@item.drinkID" class="btn btn-outline-success">Güncelle</a></td>
+                            <td>@count</td>
+                            <td>@item.Description</td>
+                            <td>@item.ImageUrl</td>
+                            <td><a href="/Admin/About/DeleteAbout/@item.AboutID" class="btn btn-outline-danger">Sil</a></td>
+                            <td><a href="/Admin/About/UpdateAbout/@item.AboutID" class="btn btn-outline-success">Güncelle</a></td>
 
                         </tr>
                     }
                 </table>
-                <a href="/Admin/Drink/CreateDrink/" class="btn btn-outline-primary">Yeni İçecek Girişi</a>
+                <a href="/Admin/About/CreateAbout/" class="btn btn-outline-primary">Yeni Hakkımızda Girişi</a>
             </div>
         </div>
     </div>
     <!-- [ sample-page ] end -->
 </div>
-

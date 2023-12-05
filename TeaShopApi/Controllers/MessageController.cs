@@ -68,7 +68,7 @@ namespace TeaShopApi.Controllers
                 MessageSubject = updateMessageDtos.MessageSubject,
             };
             _messageService.TUpdate(message);
-            return Ok("Mesaj başarılı bir şekilde sgüncellendi.");
+            return Ok("Mesaj başarılı bir şekilde güncellendi.");
         }
     }
 }
