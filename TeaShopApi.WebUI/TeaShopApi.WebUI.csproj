@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Template\css\.DS_Store" />
+    <None Include="wwwroot\Template\js\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
   </ItemGroup>
 

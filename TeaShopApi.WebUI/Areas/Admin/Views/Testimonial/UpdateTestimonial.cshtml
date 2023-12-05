@@ -1,0 +1,21 @@
+﻿@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1> Referans Güncelleme Sayfası</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="TestimonialID"/>
+    <label>İsim</label>
+    <input type="text" class="form-control" asp-for="TestimonialName" />
+    <br />
+    <label>Yorum</label>
+    <input type="text" class="form-control" asp-for="TestimonialComment" />
+    <br />
+    <label>Resim</label>
+    <input type="text" class="form-control" asp-for="TestimonialImageUrl" />
+    <br />
+    <button class="btn btn-success">Referans Güncelle</button>
+</form>
