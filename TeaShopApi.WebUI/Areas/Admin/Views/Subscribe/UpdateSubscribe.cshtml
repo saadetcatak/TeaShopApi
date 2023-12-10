@@ -1,0 +1,19 @@
+﻿@model UpdateSubscribeDto
+@{
+    ViewData["Title"] = "UpdateSubscribe";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Abone Güncelleme Sayfası</h1>
+<br />
+<form method="post">
+    <input type="hidden" asp-for="SubscribeID" />
+    <label>Mail</label>
+    <input type="email" asp-for="Mail" class="form-control" id="floatingInput" placeholder="Mail Adresiniz..." required />
+    <br />
+    <input id="SubscribeStatus" asp-for="SubscribeStatus" type="checkbox" />
+    <label for="SubscribeStatus">Durum</label>
+    <br />
+    <br />
+    <button class="btn btn-success"><i class="fas fa-pen"></i> Abone Güncelle</button>
+</form>

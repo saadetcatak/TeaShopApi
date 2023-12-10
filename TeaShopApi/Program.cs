@@ -26,6 +26,18 @@ builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IStatisticsDal, EfStatisticsDal>();
 builder.Services.AddScoped<IStatisticsService, StatisticsManager>();
 
+builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
+builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
+
+builder.Services.AddScoped<IContactDefaultDal, EfContactDefaultDal>();
+builder.Services.AddScoped<IContactDefaultService, ContactDefaultManager>();
+
+
+builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
+builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
+
+
+
 
 builder.Services.AddDbContext<TeaContext>();
 

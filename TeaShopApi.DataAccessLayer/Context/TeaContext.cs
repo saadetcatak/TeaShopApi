@@ -19,5 +19,9 @@ namespace TeaShopApi.DataAccessLayer.Context
         public DbSet<Message> Messages { get; set; }
         public DbSet<Question>Questions  { get; set; }
         public DbSet<About>Abouts { get; set; }
+        public DbSet<Subscribe>Subscribes { get; set; }
+        public DbSet<SocialMedia>SocialMedias { get; set; }
+      
+        public DbSet<ContactDefault>ContactDefaults { get; set; }
     }
 }

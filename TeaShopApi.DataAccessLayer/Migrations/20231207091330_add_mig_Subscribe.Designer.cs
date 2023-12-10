@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TeaShopApi.DataAccessLayer.Context;
 
@@ -11,9 +12,10 @@ using TeaShopApi.DataAccessLayer.Context;
 namespace TeaShopApi.DataAccessLayer.Migrations
 {
     [DbContext(typeof(TeaContext))]
-    partial class TeaContextModelSnapshot : ModelSnapshot
+    [Migration("20231207091330_add_mig_Subscribe")]
+    partial class add_mig_Subscribe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,31 +43,6 @@ namespace TeaShopApi.DataAccessLayer.Migrations
                     b.HasKey("AboutID");
 
                     b.ToTable("Abouts");
-                });
-
-            modelBuilder.Entity("TeaShopApi.EntityLayer.Concrete.ContactDefault", b =>
-                {
-                    b.Property<int>("ContactDefaultID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactDefaultID"), 1L, 1);
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ContactDefaultID");
-
-                    b.ToTable("ContactDefaults");
                 });
 
             modelBuilder.Entity("TeaShopApi.EntityLayer.Concrete.Drink", b =>

@@ -1,24 +1,39 @@
 ﻿@model List<TeaShopApi.WebUI.Dtos.TestimonialDtos.ResultTestimonialDto>
 
+
+@{
+    var active = "";
+    int count = 1;
+}
+
 <div class="clients_section layout_padding">
     <div id="custum_slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            @foreach(var item in Model)
+            @foreach (var item in Model)
             {
-            <div class="carousel-item active">
-                <div class="container">
-                    <h1 class="clients_taital">Client's Testimonial</h1>
-                    <p class="clients_text">
-                        @item.TestimonialComment
-                    </p>
-                    <div class="client_img"><img src="@item.TestimonialImageUrl"></div>
-                    <h1 class="louis_text">@item.TestimonialName</h1>
-                    <h1 class="smyth_text">SMYTH</h1>
-                    <div class="border"></div>
+                if (count == 1)
+                {
+                    active = "active";
+                    count++;
+                }
+                else
+                {
+                    active = "";
+                }
+
+                <div class="carousel-item @active">
+                    <div class="container">
+                        <h1 class="clients_taital">Müşteri</h1>
+                        <p class="clients_text">
+                            @item.TestimonialComment
+                        </p>
+                        <div class="client_img"><img src="@item.TestimonialImageUrl"></div>
+                        <h1 class="louis_text">@item.TestimonialName</h1>
+                        <h1 class="smyth_text">Müşteri</h1>
+                        <div class="border"></div>
+                    </div>
                 </div>
-            </div>
             }
-          
         </div>
         <a class="carousel-control-prev" href="#custum_slider" role="button" data-slide="next">
             <i class="fa fa-angle-left"></i>
@@ -28,6 +43,3 @@
         </a>
     </div>
 </div>
-
-
-

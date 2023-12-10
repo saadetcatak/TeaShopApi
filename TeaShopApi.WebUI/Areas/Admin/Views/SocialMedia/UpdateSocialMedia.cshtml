@@ -1,0 +1,20 @@
+﻿@model UpdateSocialMediaDto
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<h1>Yeni Sosyal Medya Bilgisi Güncelle</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="SocialMediaID" />
+    <label>Sosyal Medya Adı</label>
+    <input type="text" class="form-control" asp-for="ImageURL" />
+    <br />
+    <label>Sosyal Medya Url</label>
+    <input type="text" class="form-control" asp-for="URL" />
+    <br />
+    <button class="btn btn-success">Sosyal Medya Bilgisi Güncelle</button>
+</form>
+
+
