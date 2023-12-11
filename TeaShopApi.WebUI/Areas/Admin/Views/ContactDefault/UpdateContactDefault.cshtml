@@ -1,0 +1,25 @@
+﻿@model UpdateContactDefaultDto
+@{
+    ViewData["Title"] = "UpdateContactDefault";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+
+<h1>Güncelleme İletişim Girişi</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="ContactDefaultID" />
+    <label>İsim</label>
+    <input type="text" class="form-control" asp-for="Name" />
+    <br />
+    <label>Konu</label>
+    <input type="text" class="form-control" asp-for="Subject" />
+    <br />
+    <label>Mail</label>
+    <input type="text" class="form-control" asp-for="Email" />
+    <br />
+    <label>Mesaj</label>
+    <input type="text" class="form-control" asp-for="Message" />
+    <br />
+    <button class="btn btn-success">İletişim Güncelle</button>
+</form>

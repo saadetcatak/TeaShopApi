@@ -8,20 +8,66 @@
 <html lang="en">
 
 <body>
-  
+    <div class="banner_section layout_padding">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="banner_taital">Test of <span style="color: #f3801f;">Tea</span></h1>
+                            </div>
+                            <div class="col-md-6">
+                                <div><img src="images/img-1.png" class="image_1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="banner_taital">Test of <span style="color: #f3801f;">Tea</span></h1>
+                            </div>
+                            <div class="col-md-6">
+                                <div><img src="images/img-1.png" class="image_1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="banner_taital">Test of <span style="color: #f3801f;">Tea</span></h1>
+                            </div>
+                            <div class="col-md-6">
+                                <div><img src="images/img-1.png" class="image_1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
     @await Component.InvokeAsync("_AboutListComponentPartial")
-
     <!-- about section end -->
     <!-- booking section start -->
     <div class="booking_section">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="booking_taital">Book Now Table</h1>
-                    <p class="booking_text">It is a long established fact that a reader will be </p>
+                    <h1 class="booking_taital">Şimdi Rezervasyon Yap</h1>
+                    <p class="booking_text">Uzun zamandır bilinen bir gerçektir ki en iyi lezzet bizde.</p>
                 </div>
                 <div class="col-md-6">
-                    <div class="booking_bt"><a href="#">Book Table For Tea</a></div>
+                    <div class="booking_bt"><a href="#">Rezervasyon Yap!</a></div>
                 </div>
             </div>
         </div>
@@ -32,8 +78,6 @@
     <!-- services section end -->
     <!-- choose section start -->
     @await Html.PartialAsync("~/Views/Default/_WhyChoosePartial.cshtml")
-
-
     <!-- choose section end -->
     <!-- shop section start -->
     @await Html.PartialAsync("~/Views/Default/_OurTeaShopPartial.cshtml")
@@ -45,46 +89,8 @@
     @await Component.InvokeAsync("_TestimonialListComponentPartial")
     <!-- clients section end -->
     <!-- contact section start -->
+    @await Component.InvokeAsync("_ContactDefaultComponentPartial")
 
-
-
-    <div class="contact_section layout_padding">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="mail_main">
-                        <h1 class="contact_taital">Bizimle İletişime Geçin </h1>
-                        <form action="/action_page.php">
-                            <div class="form-group">
-                                <input type="text" class="email-bt" placeholder="İsim" name="Name">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="email-bt" placeholder="Mail" name="Email">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="email-bt" placeholder="Konu" name="Email">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="massage-bt" placeholder="Mesaj" rows="5" id="comment" name="text"></textarea>
-                            </div>
-                        </form>
-                        <div class="send_btn">
-                            <div class="main_bt"><a href="#">Send</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="map_main">
-                        <div class="map-responsive">
-                            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France"
-                                    width="600" height="600" frameborder="0" style="border:0; width: 100%;"
-                                    allowfullscreen=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

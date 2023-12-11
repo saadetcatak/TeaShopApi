@@ -10,6 +10,6 @@ namespace TeaShopApi.EntityLayer.Concrete
     {
         public int SubscribeID { get; set; }
         public string Mail { get; set; }
-        public bool SubscribeStatus { get; set; }
+       
     }
 }

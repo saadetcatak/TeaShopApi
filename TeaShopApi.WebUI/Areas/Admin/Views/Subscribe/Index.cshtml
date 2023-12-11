@@ -1,110 +1,97 @@
 ﻿@model List<ResultSubscribeDto>
 @{
-	ViewData["Title"] = "Index";
-	Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
-	int count = 0;
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <div class="row">
-	<!-- [ sample-page ] start -->
-	<div class="col-sm-12">
-		<div class="card">
-			<div class="card-header">
-				<h5>Abone İşlemleri</h5>
-				<div class="card-header-right">
-					<div class="btn-group card-option">
-						<button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="feather icon-more-horizontal"></i>
-						</button>
-						<ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
-							<li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
-							<li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
-							<li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
-							<li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="card-body">
-				@if (Model.Count() > 0)
-				{
-					<table class="table table-bordered">
-						<tr>
-							<th>#</th>
-							<th>Mail</th>
-							<th>Durum</th>
-							<th>Sil</th>
-							<th>Güncelle</th>
-						</tr>
-						@foreach (var item in Model)
-						{
-							count++;
-							<tr>
-								<td>@count</td>
-								<td>@item.Mail</td>
-								<td>
-									@{
-										if (item.SubscribeStatus == true)
-										{
-											<button onclick="updateStatus(@item.SubscribeID)" type="submit" class="btn btn-success">Aktif</button>
-										}
-										else
-										{
-											<button onclick="updateStatus(@item.SubscribeID)" type="submit" class="btn btn-danger">Pasif</button>
-										}
-									}
-								</td>
-								<td><button onclick="deleteSubscribe(@item.SubscribeID)" type="submit" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Sil</button></td>
-								<td><a href="/Admin/Subscribe/UpdateSubscribe/@item.SubscribeID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
-							</tr>
-						}
-					</table>
-				}
-				else
-				{
-					<p>Kayıtlı Herhangi Bir Abone Verisi bulunmamaktatir.</p>
-				}
-				<a href="/Admin/Subscribe/CreateSubscribe/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Abone Girişi</a>
-			</div>
-		</div>
-	</div>
-	<!-- [ sample-page ] end -->
+    <!-- [ sample-page ] start -->
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="card-header">
+                <h5>Abone İşlemleri</h5>
+                <div class="card-header-right">
+                    <div class="btn-group card-option">
+                        <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="feather icon-more-horizontal"></i>
+                        </button>
+                        <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                            <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                            <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                            <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                @if (Model.Count() > 0)
+                {
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>#</th>
+                            <th>Mail</th>
+                            <th>Durum</th>
+                            <th>Güncelle</th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.Mail</td>
+                                <td><button onclick="deleteSubscribe(@item.SubscribeID)" type="submit" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Sil</button></td>
+                                <td><a href="/Admin/Subscribe/UpdateSubscribe/@item.SubscribeID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
+                            </tr>
+                        }
+                    </table>
+                }
+                else
+                {
+                    <p>Kayıtlı Herhangi Bir Abone Verisi bulunmamaktatir.</p>
+                }
+                <a href="/Admin/Subscribe/CreateSubscribe/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i> Yeni Abone Girişi</a>
+            </div>
+        </div>
+    </div>
+    <!-- [ sample-page ] end -->
 </div>
 
 <script>
-	function deleteSubscribe(id) {
-		Swal.fire({
-			title: 'Silmek istediğinize emin misiniz?',
-			text: 'Bu öğeyi silerseniz geri alamazsınız!',
-			icon: 'warning',
-			showCancelButton: true,
-			confirmButtonText: 'Sil',
-			cancelButtonText: 'İptal'
-		}).then((result) => {
-			if (result.isConfirmed) {
-				window.location.href = "/Admin/Subscribe/DeleteSubscribe?id=" + id;
-			}
-		});
-	}
+    function deleteSubscribe(id) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: 'Bu öğeyi silerseniz geri alamazsınız!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sil',
+            cancelButtonText: 'İptal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Subscribe/DeleteSubscribe?id=" + id;
+            }
+        });
+    }
 </script>
 
 <script>
-	function updateStatus(id) {
-		Swal.fire({
-			title: 'Durum',
-			text: 'Durumu değiştirmek istediğinizden emin misiniz?',
-			icon: 'question',
-			showCancelButton: true,
-			confirmButtonText: 'Değiştir',
-			cancelButtonText: 'İptal'
-		}).then((result) => {
-			if (result.isConfirmed) {
-				window.location.href = "/Admin/Subscribe/ChangeSubscribeStatus?id=" + id;
-			}
-		});
-	}
+    function updateStatus(id) {
+        Swal.fire({
+            title: 'Durum',
+            text: 'Durumu değiştirmek istediğinizden emin misiniz?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Değiştir',
+            cancelButtonText: 'İptal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Subscribe/ChangeSubscribeStatus?id=" + id;
+            }
+        });
+    }
 </script>
 

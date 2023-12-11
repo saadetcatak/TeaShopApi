@@ -30,7 +30,7 @@ namespace TeaShopApi.Controllers
             Subscribe subscribe = new Subscribe()
             { 
                 Mail = createSubscribeDto.Mail,
-                SubscribeStatus = createSubscribeDto.SubscribeStatus,
+               
                 
 
             };
@@ -60,7 +60,7 @@ namespace TeaShopApi.Controllers
             {
                 SubscribeID=updateSubscribeDto.SubscribeID,
                 Mail =updateSubscribeDto.Mail,
-                SubscribeStatus = updateSubscribeDto.SubscribeStatus,
+               
 
             };
             _subscribeService.TUpdate(subscribe);
