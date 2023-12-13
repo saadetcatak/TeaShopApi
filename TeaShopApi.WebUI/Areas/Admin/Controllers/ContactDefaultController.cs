@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Text;
 using TeaShopApi.WebUI.Dtos.ContactDefaultDtos;
+using TeaShopApi.WebUI.Dtos.MessageDtos;
 
 namespace TeaShopApi.WebUI.Areas.Admin.Controllers
 {
@@ -17,7 +18,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         }
             public async Task<IActionResult> Index()
             {
-                var client = _httpClientFactory.CreateClient();
+			ViewBag.T1 = "İletişim";
+			var client = _httpClientFactory.CreateClient();
                 var responseMessage = await client.GetAsync("https://localhost:7181/api/ContactDefault");
                 if (responseMessage.IsSuccessStatusCode)
                 {
@@ -90,6 +92,12 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
                 }
                 return View();
             }
+        public async Task<IActionResult> MessageDetail(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var contact = await client.GetFromJsonAsync<ResultContactDefaultDto> ("https://localhost:7181/api/ContactDefault/" + id);
+            return View(contact);
         }
+    }
     }
 

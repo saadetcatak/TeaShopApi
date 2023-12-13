@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
@@ -64,14 +63,13 @@
                     <i class="feather icon-star-on"></i>
                 </div>
                 <div class="col-sm-9">
-                    <h4>4000 +</h4>
-                    <h6>Ratings Received</h6>
+                    <h4>@ViewBag.v5</h4>
+                    <h6>Toplam Mesaj Sayısı</h6>
                 </div>
             </div>
         </div>
         <!-- widget primary card end -->
     </div>
-
 
     <div class="col-md-12 col-xl-6">
         <div class="card flat-card">
@@ -82,8 +80,8 @@
                             <i class="icon feather icon-share-2 text-c-blue mb-1 d-block"></i>
                         </div>
                         <div class="col-sm-8 text-md-center">
-                            <h5>1000</h5>
-                            <span>Shares</span>
+                            <h5>@ViewBag.v6</h5>
+                            <span>Toplam Yorum</span>
                         </div>
                     </div>
                 </div>
@@ -107,7 +105,7 @@
                         </div>
                         <div class="col-sm-8 text-md-center">
                             <h5>3550</h5>
-                            <span>Returns</span>
+                            <span>Geri Dönüş</span>
                         </div>
                     </div>
                 </div>
@@ -118,7 +116,7 @@
                         </div>
                         <div class="col-sm-8 text-md-center">
                             <h5>100%</h5>
-                            <span>Order</span>
+                            <span>Sipariş</span>
                         </div>
                     </div>
                 </div>
@@ -141,3 +139,153 @@
 
 </div>
 
+<div class="row">
+
+
+    @await Component.InvokeAsync("_MessageListComponentPartial")
+
+
+    <div class="col-xl-6 col-md-12">
+        <div class="card latest-update-card">
+            <div class="card-header">
+                <h5>SOSYAL MEDYA AKIŞI</h5>
+                <div class="card-header-right">
+                    <div class="btn-group card-option">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="feather icon-more-horizontal"></i>
+                        </button>
+                        <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                            <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                            <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                            <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="latest-update-box">
+                    <div class="row p-t-30 p-b-30">
+                        <div class="col-auto text-right update-meta">
+                            <p class="text-muted m-b-0 d-inline-flex">2 Saat Önce</p>
+                            <i class="feather icon-twitter bg-twitter update-icon"></i>
+                        </div>
+                        <div class="col">
+                            <a href="#!">
+                                <h6>+ 1652 Takipçi</h6>
+                            </a>
+                            <p class="text-muted m-b-0">Gittikçe daha fazla takipçi kazanıyorsunuz!</p>
+                        </div>
+                    </div>
+                    <div class="row p-b-30">
+                        <div class="col-auto text-right update-meta">
+                            <p class="text-muted m-b-0 d-inline-flex">4 Saat Önce</p>
+                            <i class="feather icon-star bg-c-yellow update-icon"></i>
+                        </div>
+                        <div class="col">
+                            <a href="#!">
+                                <h6>+ 5 Yeni Ürün Eklendi!</h6>
+                            </a>
+                            <p class="text-muted m-b-0">Tebrikler!</p>
+                        </div>
+                    </div>
+                    <div class="row p-b-0">
+                        <div class="col-auto text-right update-meta">
+                            <p class="text-muted m-b-0 d-inline-flex">2 Gün Önce</p>
+                            <i class="feather icon-briefcase bg-c-red update-icon"></i>
+                            
+                        </div>
+                        <div class="col">
+                            <a href="#!">
+                                <h6>+1000 Yeni Sipariş Oluşturuldu</h6>
+                            </a>
+                            <p class="text-muted m-b-10">Bu harika!</p>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td class="b-none">
+                                            <a href="#!" class="align-middle">
+                                                <img src="~/flat-able-lite/saadet.jpg" alt="user image" class="img-radius wid-40 align-top m-r-15">
+                                                <div class="d-inline-block">
+                                                    <h6>Saadet Çatak Akgüneş</h6>
+                                                    <p class="text-muted m-b-0">Yönetici</p>
+                                                </div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#!" class="b-b-primary text-primary">Tüm İlerlemeleri Gör!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+<div class="col-md-12 col-xl-6">  
+    <hr>
+    <div class="card mb-3">
+            <img class="img-fluid card-img-top" src="~/flat-able-lite/drink1.jpg" style="height:300px;width:600px;" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Sağlıklı İçecekler</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+</div>
+    <div class="col-md-12 col-xl-6">       
+        <hr>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+            <img class="img-fluid card-img-bottom" src="~/flat-able-lite/drink2.jpg" style="height:300px;width:600px;" alt=" Card image cap">
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-12">
+    <h5>Card Groups</h5>
+    <hr>
+    <div class="card-group">
+        <div class="card">
+            <img class="img-fluid card-img-top" src="~/Template/images/cup-img-1.png" style="height:200px;width:200px;" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="img-fluid card-img-top" src="~/Template/images/cup-img-5.png" style="height:200px;width:200px;" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+        <div class="card">
+            <img class="img-fluid card-img-top" src="~/Template/images/cup-img-4.png" style="height:200px;width:200px;" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+        </div>
+    </div>
+</div>

@@ -28,6 +28,11 @@ namespace TeaShopApi.BusinessLayer.Concrete
             return _testimonialDal.GetById(id);
         }
 
+        public List<Testimonial> TGetLast3Testimonails()
+        {
+            return _testimonialDal.GetLast3Testimonails();
+        }
+
         public List<Testimonial> TGetListAll()
         {
             return _testimonialDal.GetListAll();

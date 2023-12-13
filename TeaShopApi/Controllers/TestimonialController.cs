@@ -20,7 +20,7 @@ namespace TeaShopApi.Controllers
         [HttpGet]
         public IActionResult TestimonialList()
         {
-            var values=_testimonialService.TGetListAll();
+            var values=_testimonialService.TGetLast3Testimonails();
             return Ok(values);
         }
 

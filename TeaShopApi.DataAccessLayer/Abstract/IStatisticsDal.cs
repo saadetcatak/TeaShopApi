@@ -12,5 +12,7 @@ namespace TeaShopApi.DataAccessLayer.Abstract
         decimal DrinkAveragePrice();
         string LastDrinkName();
         string MaxPriceDrink();
+        int TotatlContact();
+        int TotalTestimonial();
     }
 }

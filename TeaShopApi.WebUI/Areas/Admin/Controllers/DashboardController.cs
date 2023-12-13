@@ -36,9 +36,17 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
             var jsonData4 = await responseMessage4.Content.ReadAsStringAsync();
             ViewBag.v4= jsonData4;
 
+            var responseMessage5 = await client.GetAsync("https://localhost:7181/api/Statistics/GetTotatlContact");
+            var jsonData5 = await responseMessage5.Content.ReadAsStringAsync();
+            ViewBag.v5 = jsonData5;
 
+            var responseMessage6 = await client.GetAsync("https://localhost:7181/api/Statistics/GetTotalTestimonial");
+            var jsonData6 = await responseMessage6.Content.ReadAsStringAsync();
+            ViewBag.v6 = jsonData6;
 
             return View();
         }
+
+       
     }
 }

@@ -20,6 +20,7 @@ namespace TeaShopApi.WebUI.Controllers
             return View();
         }
 
+        [HttpGet]
         public PartialViewResult _SubscribePartial()
         {
             return PartialView();
@@ -29,20 +30,14 @@ namespace TeaShopApi.WebUI.Controllers
         public async Task<IActionResult> _SubscribePartial(CreateSubscribeDto createSubscribeDto)
         {
 
-
-            using (var client = _httpClientFactory.CreateClient())
-            {
-
-                var content = new StringContent(JsonConvert.SerializeObject(createSubscribeDto), Encoding.UTF8, "application/json");
-                var responseMessage = await client.PostAsync("https://localhost:7181/api/Subscribe", content);
+            var client = _httpClientFactory.CreateClient();
+            var content = new StringContent(JsonConvert.SerializeObject(createSubscribeDto), Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("https://localhost:7181/api/Subscribe", content);
 
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Index");
                 }
-
-            }
-
 
             return View();
 

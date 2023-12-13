@@ -35,7 +35,7 @@
                         <th>Konu</th>
                         <th>Mesaj</th>
                         <th>Sil</th>
-                        <th>Güncelle</th>
+                        <th>Mesaj Aç</th>
                     </tr>
                     @foreach (var item in Model)
                     {
@@ -46,13 +46,12 @@
                             <td>@item.Email</td>
                             <td>@item.Subject</td>
                             <td>@item.Message</td>
-                            <td><a href="/Admin/ContactDefault/DeleteContactDefault/@item.ContactDefaultID" class="btn btn-outline-danger">Sil</a></td>
-                            <td><a href="/Admin/ContactDefault/UpdateContactDefault/@item.ContactDefaultID" class="btn btn-outline-success">Güncelle</a></td>
+                            <td><a href="/Admin/ContactDefault/DeleteContactDefault/@item.ContactDefaultID" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Sil</a></td>
+                            <td><a href="/Admin/ContactDefault/MessageDetail/@item.ContactDefaultID" class="btn btn-outline-info"><i class="fas fa-comment"></i>Mesajı Aç</a></td>
 
                         </tr>
                     }
-                </table>
-                <a href="/Admin/ContactDefault/CreateContactDefault/" class="btn btn-outline-primary">Yeni Mesaj Girişi</a>
+                </table>              
             </div>
         </div>
     </div>

@@ -3,6 +3,6 @@
     public class CreateSubscribeDto
     {
         public string Mail { get; set; }
-        public bool SubscribeStatus { get; set; }
+        
     }
 }

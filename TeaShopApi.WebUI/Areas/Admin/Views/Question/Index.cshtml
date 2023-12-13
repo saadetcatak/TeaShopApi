@@ -4,54 +4,56 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
     int count = 0;
 }
-<div class="row">
-    <!-- [ sample-page ] start -->
-    <div class="col-sm-12">
-        <div class="card">
 
-            <div class="card-header">
-                <h5>Soru Cevap İşlemleri</h5>
-                <div class="card-header-right">
-                    <div class="btn-group card-option">
-                        <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="feather icon-more-horizontal"></i>
-                        </button>
-                        <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
-                            <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
-                            <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
-                            <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
-                            <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
-                        </ul>
+
+    <div class="row">
+        <!-- [ sample-page ] start -->
+        <div class="col-sm-12">
+            <div class="card">
+
+                <div class="card-header">
+                    <h5>Soru Cevap İşlemleri</h5>
+                    <div class="card-header-right">
+                        <div class="btn-group card-option">
+                            <button type="button" class="btn dropdown-toggle btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="feather icon-more-horizontal"></i>
+                            </button>
+                            <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> maximize</span><span style="display:none"><i class="feather icon-minimize"></i> Restore</span></a></li>
+                                <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> collapse</span><span style="display:none"><i class="feather icon-plus"></i> expand</span></a></li>
+                                <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> reload</a></li>
+                                <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> remove</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered">
-                    <tr>
-                        <th>#</th>
-                        <th>Soru</th>
-                        <th>Cevap</th>
-                        <th>Sil</th>
-                        <th>Güncelle</th>
-                    </tr>
-                    @foreach (var item in Model)
-                    {
-                        count++;
+                <div class="card-body">
+                    <table class="table table-bordered">
                         <tr>
-                            <td>@count</td>
-                            <td>@item.QuestionDetail</td>
-                            <td>@item.AnswerDetail</td>
-                            <td><a href="/Admin/Question/DeleteQuestion/@item.QuestionID" class="btn btn-outline-danger">Sil</a></td>
-                            <td><a href="/Admin/Question/UpdateQuestion/@item.QuestionID" class="btn btn-outline-success">Güncelle</a></td>
-
+                            <th>#</th>
+                            <th>Soru</th>
+                            <th>Cevap</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
                         </tr>
-                    }
-                </table>
-                <a href="/Admin/Question/CreateQuestion/" class="btn btn-outline-primary">Yeni Soru Girişi</a>
+                        @foreach (var item in Model)
+                        {
+                            count++;
+                            <tr>
+                                <td>@count</td>
+                                <td>@item.QuestionDetail</td>
+                                <td>@item.AnswerDetail.Substring(0,30);</td>
+                                <td><a href="/Admin/Question/DeleteQuestion/@item.QuestionID" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Sil</a>
+                                <td><a href="/Admin/Question/UpdateQuestion/@item.QuestionID" class="btn btn-outline-success"><i class="fas fa-pen"></i>Düzenle</a>
+
+                            </tr>
+                        }
+                    </table>
+                    <a href="/Admin/Question/CreateQuestion/" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>Yeni Soru-Cevap Ekle</a>
+                </div>
             </div>
         </div>
+        <!-- [ sample-page ] end -->
     </div>
-    <!-- [ sample-page ] end -->
-</div>
 
 

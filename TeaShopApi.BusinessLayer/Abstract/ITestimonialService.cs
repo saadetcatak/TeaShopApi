@@ -9,5 +9,6 @@ namespace TeaShopApi.BusinessLayer.Abstract
 {
     public interface ITestimonialService:IGenericService<Testimonial>
     {
+        List<Testimonial> TGetLast3Testimonails();
     }
 }

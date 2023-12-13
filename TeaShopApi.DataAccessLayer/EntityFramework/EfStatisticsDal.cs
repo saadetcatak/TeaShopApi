@@ -41,5 +41,17 @@ namespace TeaShopApi.DataAccessLayer.EntityFramework
             string value=_context.Drinks.Where(x=>x.DrinkPrice==price).Select(y=>y.DrinkName).FirstOrDefault();
             return value;
         }
+
+        public int TotalTestimonial()
+        {
+            int value=_context.Testimonials.Count();
+            return value;
+        }
+
+        public int TotatlContact()
+        {
+           int value=_context.ContactDefaults.Count();
+            return value;
+        }
     }
 }

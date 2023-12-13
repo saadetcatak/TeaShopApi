@@ -18,7 +18,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var client = _httpClientFactory.CreateClient();
+            ViewBag.T1 = "Hakkımızda";
+			var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7181/api/About");
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -31,7 +32,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult CreateAbout()
         {
-            return View();
+			ViewBag.T1 = "Ekleme";
+			return View();
         }
 
 
@@ -62,7 +64,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateAbout(int id)
         {
-            var client = _httpClientFactory.CreateClient();
+			ViewBag.T1 = "Güncelleme";
+			var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7181/api/About/" + id);
             if (responseMessage.IsSuccessStatusCode)
             {

@@ -15,5 +15,12 @@ namespace TeaShopApi.DataAccessLayer.EntityFramework
         public EfTestimonialDal(TeaContext context) : base(context)
         {
         }
+
+        public List<Testimonial> GetLast3Testimonails()
+        {
+            var context = new TeaContext();
+            var values = context.Testimonials.OrderBy(x => x.TestimonialID).Take(3).ToList();
+            return values;
+        }
     }
 }

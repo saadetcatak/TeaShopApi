@@ -26,5 +26,9 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
 		{
 			return PartialView();
 		}
-	}
+        public PartialViewResult _PageTitlePartial()
+        {
+            return PartialView();
+        }
+    }
 }
