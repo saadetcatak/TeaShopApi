@@ -43,7 +43,8 @@
                             <tr>
                                 <td>@count</td>
                                 <td>@item.Mail</td>
-                                <td><a href="/Admin/Subscribe/DeleteSubscribe/@item.SubscribeID" class="btn btn-outline-danger"><i class="fas fa-trash"></i>Sil</a></td>
+                              
+                                <td><button onclick="deleteSubscribe(@item.SubscribeID)" type="submit" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Sil</button></td>
                                 <td><a href="/Admin/Subscribe/UpdateSubscribe/@item.SubscribeID" class="btn btn-outline-success"><i class="fas fa-pen"></i> Güncelle</a></td>
                             </tr>
                         }
@@ -60,6 +61,22 @@
     <!-- [ sample-page ] end -->
 </div>
 
+<script>
+    function deleteSubscribe(id) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: 'Bu öğeyi silerseniz geri alamazsınız!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sil',
+            cancelButtonText: 'İptal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Subscribe/DeleteSubscribe?id=" + id;
+            }
+        });
+    }
+</script>
 
 
 

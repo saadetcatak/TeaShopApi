@@ -18,6 +18,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.T1 = "Dashboard";
+            ViewBag.T2 = "Dashboard";
             var client = _httpClientFactory.CreateClient();
 
             var responseMessage1 = await client.GetAsync("https://localhost:7181/api/Statistics/GetDrinkAveragePrice");

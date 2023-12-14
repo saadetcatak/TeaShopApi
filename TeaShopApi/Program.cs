@@ -3,6 +3,7 @@ using TeaShopApi.BusinessLayer.Concrete;
 using TeaShopApi.DataAccessLayer.Abstract;
 using TeaShopApi.DataAccessLayer.Context;
 using TeaShopApi.DataAccessLayer.EntityFramework;
+using TeaShopApi.EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +36,6 @@ builder.Services.AddScoped<IContactDefaultService, ContactDefaultManager>();
 
 builder.Services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
 builder.Services.AddScoped<ISocialMediaService, SocialMediaManager>();
-
 
 
 

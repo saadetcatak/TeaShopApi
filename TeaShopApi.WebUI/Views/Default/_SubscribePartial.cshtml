@@ -12,8 +12,10 @@
     <div class="newsletter_right">
         <h5 class="newsletter_taital">Son Gelişmelerden Haberdar Olun!</h5>
         <div class="subscribe_main">
+             <form asp-controller="Default" asp-action="_SubscribePartial" method="post">
             <input class="form-control" type="email" placeholder="Email Adresiniz" asp-for="Mail" required="">
             <button class="btn btn-style btn-primary" type="submit" onclick="subscribe()">Abone Ol</button>
+            </form>
         </div>
     </div>
 </div>

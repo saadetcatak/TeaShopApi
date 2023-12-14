@@ -9,7 +9,7 @@ using TeaShopApi.EntityLayer.Concrete;
 
 namespace TeaShopApi.DataAccessLayer.Context
 {
-    public class TeaContext:IdentityDbContext
+    public class TeaContext:IdentityDbContext<AppUser,AppRole,int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

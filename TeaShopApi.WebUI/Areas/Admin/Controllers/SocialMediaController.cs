@@ -19,6 +19,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.T1 = "Sosyal Medya";
+            ViewBag.T2 = "Sosyal Medya Listesi";
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7181/api/SocialMedia");
             if (responseMessage.IsSuccessStatusCode)
@@ -41,6 +43,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateSocialMedia(CreateSocialMediaDto createSocialMediaDto)
         {
+            ViewBag.T1 = "Sosyal Medya";
+            ViewBag.T2 = "Sosyal Medya Ekle";
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createSocialMediaDto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -68,6 +72,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateSocialMedia(int id)
         {
+            ViewBag.T1 = "Sosyal Medya";
+            ViewBag.T2 = "Sosyal Medya Güncelle";
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7181/api/SocialMedia/" + id);
             if (responseMessage.IsSuccessStatusCode)

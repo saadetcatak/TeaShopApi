@@ -1,12 +1,19 @@
+using TeaShopApi.DataAccessLayer.Context;
+using TeaShopApi.EntityLayer.Concrete;
+using TeaShopApi.WebUI.Models;
+
+
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<TeaContext>();
 builder.Services.AddControllersWithViews();
-
-
-
 builder.Services.AddHttpClient();
 //client iþlemi için yazýyoruz.
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<TeaContext>().AddErrorDescriber<CustomIdentityValidator>();
 
 
 
@@ -26,7 +33,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

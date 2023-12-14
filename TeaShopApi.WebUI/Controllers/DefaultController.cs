@@ -82,6 +82,8 @@ namespace TeaShopApi.WebUI.Controllers
         }
 
         public PartialViewResult _TestOfTeaPartial()
-        { return PartialView(); }
+        { 
+            return PartialView(); 
+        }
     }
 }

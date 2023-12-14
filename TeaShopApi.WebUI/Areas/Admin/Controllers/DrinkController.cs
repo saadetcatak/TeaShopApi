@@ -19,6 +19,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.T1 = "İçecekler";
+            ViewBag.T2 = "İçecekler Listesi";
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7181/api/Drinks");
             if (responseMessage.IsSuccessStatusCode)
@@ -41,6 +43,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDrink(CreateDrinkDto createDrinkDto)
         {
+            ViewBag.T1 = "İçecekler";
+            ViewBag.T2 = "İçecek Ekleme";
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createDrinkDto);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -68,6 +72,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateDrink(int id)
         {
+            ViewBag.T1 = "İçecekler";
+            ViewBag.T2 = "İçecek Bilgisi Güncelleme";
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("https://localhost:7181/api/Drinks/" + id);
             if (responseMessage.IsSuccessStatusCode)
