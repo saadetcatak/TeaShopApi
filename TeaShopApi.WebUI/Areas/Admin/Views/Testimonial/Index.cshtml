@@ -43,7 +43,7 @@
                         <tr>
                             <td>@count</td>
                             <td>@item.TestimonialName</td>
-                            <td>@item.TestimonialComment</td>
+                            <td>@item.TestimonialComment.Substring(0,50)</td>
                             <td><img src="@item.TestimonialImageUrl" style="height:75px;width:75px;border-radius:50%" /></td>
                             <td><a href="/Admin/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-outline-danger"><i class="fas fa-trash">Sil</a></td>
                             <td><a href="/Admin/Testimonial/TestimonialDetail/@item.TestimonialID" class="btn btn-outline-info"><i class="fas fa-comment"></i>Yorum Aç</a></td>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
 using Newtonsoft.Json;
 using TeaShopApi.WebUI.Dtos.DrinkDtos;
 
@@ -24,7 +25,8 @@ namespace TeaShopApi.WebUI.Areas.Admin.Controllers
 
             var responseMessage1 = await client.GetAsync("https://localhost:7181/api/Statistics/GetDrinkAveragePrice");
             var jsonData1 = await responseMessage1.Content.ReadAsStringAsync();
-            ViewBag.v1=jsonData1;
+            ViewBag.v1 = jsonData1;
+
 
             var responseMessage2 = await client.GetAsync("https://localhost:7181/api/Statistics/GetDrinkCount");
             var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();

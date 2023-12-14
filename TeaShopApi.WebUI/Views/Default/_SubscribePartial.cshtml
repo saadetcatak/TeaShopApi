@@ -1,24 +1,25 @@
 ﻿@model TeaShopApi.WebUI.Dtos.SubscribeDtos.CreateSubscribeDto
 
 
+
+
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <div class="newsletter_section">
-    <div class="newsletter_left">
-        <div class="footer_logo"><img src="~/Template/images/footer-logo.png"></div>
-    </div>
-    <div class="newsletter_right">
-        <h5 class="newsletter_taital">Son Gelişmelerden Haberdar Olun!</h5>
-        <div class="subscribe_main">
-             <form asp-controller="Default" asp-action="_SubscribePartial" method="post">
-            <input class="form-control" type="email" placeholder="Email Adresiniz" asp-for="Mail" required="">
-            <button class="btn btn-style btn-primary" type="submit" onclick="subscribe()">Abone Ol</button>
-            </form>
-        </div>
-    </div>
+    <div class="footer_logo"><img src="~/Template/images/footer-logo.png"></div>
 </div>
+<div class="newsletter_right">
+    <h5 class="newsletter_taital">Son Gelişmelerden Haberdar Olun!</h5>
+    <form asp-controller="Default" asp-action="_SubscribePartial" method="post">
+    <div class="subscribe_main">
+        <input type="email" class="mail_text" placeholder="E-posta Adresiniz" asp-for="Mail">
+        <div class="subscribe_bt" onclick="subscribe()"><a href="#">Abone Ol</a></div>
+    </div>
+    </form>
+</div>
+
 
 <script>
     function subscribe() {
