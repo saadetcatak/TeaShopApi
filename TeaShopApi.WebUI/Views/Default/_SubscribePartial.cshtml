@@ -2,22 +2,24 @@
 
 
 
-
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+
 <div class="newsletter_section">
-    <div class="footer_logo"><img src="~/Template/images/footer-logo.png"></div>
-</div>
-<div class="newsletter_right">
-    <h5 class="newsletter_taital">Son Gelişmelerden Haberdar Olun!</h5>
-    <form asp-controller="Default" asp-action="_SubscribePartial" method="post">
-    <div class="subscribe_main">
-        <input type="email" class="mail_text" placeholder="E-posta Adresiniz" asp-for="Mail">
-        <div class="subscribe_bt" onclick="subscribe()"><a href="#">Abone Ol</a></div>
+    <div class="newsletter_left">
+        <div class="footer_logo"><img src="~/Template/images/footer-logo.png"></div>
     </div>
-    </form>
+    <div class="newsletter_right">
+        <h5 class="newsletter_taital">Yeni Ürünleri Kaçırmamak İçin Abone Olun</h5>
+        <form asp-controller="Default" asp-action="_SubscribePartial" method="post">
+            <div class="subscribe_main">
+                <input type="email" class="mail_text" placeholder="E-posta Adresiniz" asp-for="Mail">
+                <div class="subscribe_bt" onclick="subscribe()"><a href="#">Abone Ol</a></div>
+            </div>
+        </form>
+    </div>
 </div>
 
 

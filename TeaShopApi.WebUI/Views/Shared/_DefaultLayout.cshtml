@@ -70,42 +70,78 @@
         </div>
         <!-- banner section end -->
     </div>
+          
+            ﻿<div class="footer_section layout_padding">
+                <div class="container">
 
-    <div class="footer_section layout_padding">
-        <div class="container">
-
-            @await Html.PartialAsync("~/Views/Default/_SubscribePartial.cshtml")
-
-
-            <div class="footer_taital_main">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-12">
-                        <h2 class="useful_text">Hakkımızda</h2>
-                        <p class="ipsum_text">
-                            1980 yılında sizlere hizmet vermeye başladığımız günden bu yana siz kıymetli müşterilerimize her zaman daha iyisini sunmak için çalışmalarımıza devam ediyoruz. 
-                        </p>
-                    </div>
-                    <div class="col-lg-6 col-sm-12">
-                        <h2 class="useful_text">Menü</h2>
-                        <div class="footer_links">
-                            <ul>
-                                <li><a href="index.html">Ana Sayfa</a></li>
-                                <li><a href="about.html">Hakkımızda</a></li>
-                                <li><a href="services.html">Hizmetler</a></li>
-                                <li><a href="contact.html">İletişim</a></li>
-                            </ul>
+                    @await Html.PartialAsync("~/Views/Default/_SubscribePartial.cshtml")
+                    
+                    <div class="footer_taital_main">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <h2 class="useful_text">Hakkımızda</h2>
+                                <p class="ipsum_text">
+                                    1980 yılında sizlere hizmet vermeye başladığımız günden bu yana siz kıymetli müşterilerimize her zaman daha iyisini sunmak için çalışmalarımıza devam ediyoruz.
+                                </p>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h2 class="useful_text">MENÜ</h2>
+                                <div class="footer_links">
+                                    <ul>
+                                        <li><a href="index.html">Ana Sayfa</a></li>
+                                        <li><a href="about.html">Hakkımızda</a></li>
+                                        <li><a href="services.html">Hizmetlerimiz</a></li>
+                                        <li><a href="pricing.html">Fiyat Listsi</a></li>
+                                        <li><a href="contact.html">Bize Ulaşın</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h2 class="useful_text">Bloglar</h2>
+                                <div class="footer_links">
+                                    <ul>
+                                        <li><a href="#">Adipiscing</a></li>
+                                        <li><a href="#">Elit, sed do</a></li>
+                                        <li><a href="#">Eiusmod </a></li>
+                                        <li><a href="#">Tempor </a></li>
+                                        <li><a href="#">incididunt</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <h2 class="useful_text">Bize Ulaşın</h2>
+                                <div class="addres_link">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <img src="~/Template/images/map-icon.png"><span class="padding_left_10">
+                                                    Selçuklu/Konya
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="~/Template/images/call-icon.png"><span class="padding_left_10">
+                                                    +90
+                                                    444 000 44
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="~/Template/images/mail-icon.png"><span class="padding_left_10">teashop@gmail.com</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+                        <h1 class="follow_text">Bizi Takip Edin</h1>
+                        @await Component.InvokeAsync("_SocialMediaListComponentPartial")
                     </div>
-                   
                 </div>
-                <h1 class="follow_text">Bizi Takip Et!</h1>
-                
-                @await Component.InvokeAsync("_SocialMediaListComponentPartial")
-
-
             </div>
-        </div>
-    </div>
+   
     <!-- footer section end -->
     <!-- copyright section start -->
     <div class="copyright_section">
